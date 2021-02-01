@@ -1,0 +1,31 @@
+using System;
+
+namespace SimpleOperationsAndMoreCalculationsMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double neededHours = double.Parse(Console.ReadLine());
+            double days = double.Parse(Console.ReadLine());
+            double employeesCount = double.Parse(Console.ReadLine());
+
+            double totalDays = days * 0.9;
+            double hoursForWeek = totalDays * 8;
+            double overtime = employeesCount * (2 * days);
+            double totalHours = overtime + hoursForWeek;
+
+            if (totalHours >= neededHours)
+            {
+                double diff = Math.Ceiling(totalHours - neededHours);
+                Console.WriteLine($"Yes!{Math.Ceiling(diff)} hours left.");
+            }
+            else
+            {
+                double diff = neededHours - totalHours;
+                Console.WriteLine($"Not enough time!{Math.Ceiling(diff)} hours needed.");
+            }
+
+        }
+    }
+}

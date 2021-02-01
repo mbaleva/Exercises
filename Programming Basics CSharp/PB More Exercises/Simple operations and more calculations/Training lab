@@ -1,0 +1,36 @@
+using System;
+
+
+namespace NestedLoopsLab
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double w = double.Parse(Console.ReadLine());
+            double h = double.Parse(Console.ReadLine());
+
+            double wwInCentimeters = w * 100;
+            double hInCentimeters = h * 100;
+
+            double h1 = hInCentimeters - 100;
+            double remainder = h1 % 70;
+            double meow = h1 - remainder;
+            double totalH = meow / 70;
+
+            
+            double remainderW = wwInCentimeters % 120;
+            double meowW = wwInCentimeters - remainderW;
+            double totalW = meowW / 120;
+
+            double places = (totalW * totalH)-3;
+
+
+
+            Console.WriteLine(places);
+            
+            
+            
+        }
+    }
+}

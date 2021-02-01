@@ -1,0 +1,62 @@
+using System;
+
+namespace SimpleOperationsAndMoreCalculationsMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double bottlesDetergent = double.Parse(Console.ReadLine());
+
+           
+
+            double totalDetergent = bottlesDetergent * 750;
+            int counter = 0;
+            double counterForPlates = 0;
+            double counterForPot = 0;
+            double plates = 0.00;
+            double pot = 0.00;
+
+            while (true)
+            {
+                string command = Console.ReadLine();
+
+                if (command == "End")
+                {
+                    break;
+                }
+
+                double washingVessels = double.Parse(command);
+                counter++;
+
+                if (counter<=2)
+                {
+                    plates = washingVessels * 5;
+                    totalDetergent -= plates;
+                    counterForPlates += washingVessels;
+                }
+                else if (counter>2)
+                {
+                    counter = 0;
+                    pot = washingVessels * 15;
+                    totalDetergent -= pot;
+                    counterForPot += washingVessels;
+                }
+                if (totalDetergent < 0)
+                {
+                    break;
+                }
+            }
+            if (totalDetergent>=0)
+            {
+                Console.WriteLine($"Detergent was enough!");
+                Console.WriteLine($"{counterForPlates} dishes and {counterForPot} pots were washed.");
+                Console.WriteLine($"Leftover detergent {totalDetergent} ml.");
+            }
+            else
+            {
+                Console.WriteLine($"Not enough detergent, {Math.Abs(totalDetergent)} ml. more necessary!");
+            }
+        }
+    }
+}

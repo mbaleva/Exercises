@@ -1,0 +1,35 @@
+using System;
+
+
+namespace ConditionalStatemantsMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double v = double.Parse(Console.ReadLine());
+            double p1 = double.Parse(Console.ReadLine());
+            double p2 = double.Parse(Console.ReadLine());
+            double hours = double.Parse(Console.ReadLine());
+
+            double litersForP1 = p1 * hours;
+            double litersForP2 = p2 * hours;
+            double totalLiters = litersForP1 + litersForP2;
+
+            double totalPercentage = (totalLiters/v)*100;
+            double percentageForP1 = (litersForP1 / totalLiters) * 100;
+            double percentageForP2 = (litersForP2 / totalLiters) * 100;
+
+            if (totalLiters <= v)
+            {
+                Console.WriteLine($"The pool is {totalPercentage:F2}% full. Pipe 1: {percentageForP1:F2}%." +
+                    $" Pipe 2: {percentageForP2:F2}%.");
+            }
+            else
+            {
+                double diff = totalLiters - v;
+                Console.WriteLine($"For {hours} hours the pool overflows with {diff} liters.");
+            }
+        }
+    }
+}

@@ -1,0 +1,112 @@
+using System;
+
+namespace SimpleOperationsAndMoreCalculationsMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string season = Console.ReadLine();
+            string girlsOrBoys = Console.ReadLine();
+            int studentsCount = int.Parse(Console.ReadLine());
+            int nightsCount = int.Parse(Console.ReadLine());
+
+            string typeSport = string.Empty;
+            string girls = string.Empty;
+            string boys = string.Empty;
+            string mixed = string.Empty;
+            double price = 0.00;
+
+            if (season == "Winter")
+            {
+                girls = "Gymnastics";
+                boys = "Judo";
+                mixed = "Ski";
+                if (girlsOrBoys == "girls"||girlsOrBoys == "boys")
+                {
+                    price = studentsCount * 9.6*nightsCount;
+                }
+                else
+                {
+                    price = studentsCount * 10*nightsCount;
+                }
+                if (studentsCount>=50)
+                {
+                    price *= 0.5;
+                }
+                else if (studentsCount>=20&&studentsCount<50)
+                {
+                    price *= 0.85;
+                }
+                else if (studentsCount>=10&&studentsCount<20)
+                {
+                    price *= 0.95;
+                }
+            }
+            if (season == "Spring")
+            {
+                girls = "Athletics";
+                boys = "Tennis";
+                mixed = "Cycling";
+                if (girlsOrBoys == "girls" || girlsOrBoys == "boys")
+                {
+                    price = studentsCount * 7.2*nightsCount;
+                }
+                else
+                {
+                    price = studentsCount * 9.5*nightsCount;
+                }
+                if (studentsCount >= 50)
+                {
+                    price *= 0.5;
+                }
+                else if (studentsCount >= 20 && studentsCount < 50)
+                {
+                    price *= 0.85;
+                }
+                else if (studentsCount >= 10 && studentsCount < 20)
+                {
+                    price *= 0.95;
+                }
+            }
+            if (season == "Summer")
+            {
+                girls = "Volleyball";
+                boys = "Football";
+                mixed = "Swimming";
+                if (girlsOrBoys == "girls" || girlsOrBoys == "boys")
+                {
+                    price = studentsCount * 15*nightsCount;
+                }
+                else
+                {
+                    price = studentsCount * 20*nightsCount;
+                }
+                if (studentsCount >= 50)
+                {
+                    price *= 0.5;
+                }
+                else if (studentsCount >= 20 && studentsCount < 50)
+                {
+                    price *= 0.85;
+                }
+                else if (studentsCount >= 10 && studentsCount < 20)
+                {
+                    price *= 0.95;
+                }
+            }
+            if (girlsOrBoys == "girls")
+            {
+                Console.WriteLine($"{girls} {price:F2} lv.");
+            }
+            if (girlsOrBoys == "boys")
+            {
+                Console.WriteLine($"{boys} {price:F2} lv.");
+            }
+            if (girlsOrBoys == "mixed")
+            {
+                Console.WriteLine($"{mixed} {price:F2} lv.");
+            }
+        }
+    }
+}

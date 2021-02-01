@@ -1,0 +1,51 @@
+using System;
+
+
+namespace SimpleOperationsAndMoreCalculations
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            int countDoctors = 7;
+
+
+            int treatenedPatients = 0;
+            int untreatenedPatients = 0;
+            int daysCounter = 0;
+
+            for (int i = 1; i <= n; i++)
+            {
+                daysCounter++;
+                if (daysCounter == 3)
+                {
+                    daysCounter = 0;
+                    if (untreatenedPatients > treatenedPatients)
+                    {
+                        countDoctors++;
+
+                    }
+
+                }
+                int patients = int.Parse(Console.ReadLine());
+                if (patients < countDoctors)
+                {
+                    treatenedPatients += patients;
+                }
+                else
+                {
+                    patients -= countDoctors;
+                    untreatenedPatients += patients;
+                    treatenedPatients += countDoctors;
+                }
+                
+            }
+            Console.WriteLine($"Treated patients: {treatenedPatients}.");
+            Console.WriteLine($"Untreated patients: {untreatenedPatients}.");
+
+
+        }
+    }
+}

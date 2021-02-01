@@ -1,0 +1,36 @@
+using System;
+
+namespace ConditionalExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+
+            for (int firstDigit = 1; firstDigit < 10; firstDigit++)
+            {
+                for (int secondDigit = 1; secondDigit < 10; secondDigit++)
+                {
+                    for (int thirdDigit = 1; thirdDigit < 10; thirdDigit++)
+                    {
+                        for (int fourthDigit = 1; fourthDigit < 10; fourthDigit++)
+                        {
+                            if (firstDigit + secondDigit == thirdDigit + fourthDigit)
+                            {
+                                int sum = firstDigit + secondDigit;
+
+                                if (n % sum == 0)
+                                {
+                                    Console.Write($"{firstDigit}{secondDigit}{thirdDigit}{fourthDigit} ");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

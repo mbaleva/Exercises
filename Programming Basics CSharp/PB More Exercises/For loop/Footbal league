@@ -1,0 +1,52 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double capacity = double.Parse(Console.ReadLine());
+            double countFens = double.Parse(Console.ReadLine());
+           
+
+            double countA = 0;
+            double countB = 0;
+            double countV = 0;
+            double countG = 0;
+
+            for (int i = 1; i <=countFens; i++)
+            {
+                string section = Console.ReadLine();
+                if (section == "A")
+                {
+                    countA++;
+                }
+                else if (section == "B")
+                {
+                    countB++;
+                }
+                else if (section == "V")
+                {
+                    countV++;
+                }
+                else if (section == "G")
+                {
+                    countG++;
+                }
+            }
+            double percentageA = (countA / countFens) * 100;
+            double percentageB = (countB / countFens) * 100;
+            double percentageV = (countV / countFens) * 100;
+            double percentageG = (countG / countFens) * 100;
+            double percentage = (countFens / capacity) * 100;
+
+            Console.WriteLine($"{percentageA:F2}%");
+            Console.WriteLine($"{percentageB:F2}%");
+            Console.WriteLine($"{percentageV:F2}%");
+            Console.WriteLine($"{percentageG:F2}%");
+            Console.WriteLine($"{percentage:F2}%");
+
+        }
+    }
+}

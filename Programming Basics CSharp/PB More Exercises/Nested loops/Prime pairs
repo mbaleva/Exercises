@@ -1,0 +1,27 @@
+using System;
+
+
+namespace ConditionalExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numberOne = int.Parse(Console.ReadLine());
+            int numberTwo = int.Parse(Console.ReadLine());
+            int diff1 = int.Parse(Console.ReadLine());
+            int diff2 = int.Parse(Console.ReadLine());
+
+            for (int a = numberOne; a <= numberOne + diff1; a++)
+            {
+                for (int b = numberTwo; b <= numberTwo + diff2; b++)
+                {
+                    if (a % 2 != 0 && a % 3 != 0 && a % 5 != 0 && a % 7 != 0 && b % 2 != 0 && b % 3 != 0 && b % 5 != 0 && b % 7 != 0)
+                    {
+                        Console.WriteLine($"{a}{b}");
+                    }
+                }
+            }
+        }
+    }
+}

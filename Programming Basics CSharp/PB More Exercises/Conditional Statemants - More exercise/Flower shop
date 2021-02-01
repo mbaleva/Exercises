@@ -1,0 +1,35 @@
+using System;
+
+namespace SimpleOperationsAndMoreCalculationsMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int magnoliaCount = int.Parse(Console.ReadLine());
+            int flowerCount = int.Parse(Console.ReadLine());
+            int roseCount = int.Parse(Console.ReadLine());
+            int cactusCount = int.Parse(Console.ReadLine());
+            double priceForAGift = double.Parse(Console.ReadLine());
+
+            double magnoliaPrice = magnoliaCount * 3.25;
+            double flowerPrice = flowerCount * 4;
+            double rosePrice = roseCount * 3.50;
+            double cactusPrice = cactusCount * 8;
+
+            double priceWithoutDiscount = magnoliaPrice + flowerPrice + rosePrice + cactusPrice;
+            double totalPrice = priceWithoutDiscount * 0.95;
+
+            if (totalPrice>=priceForAGift)
+            {
+                double diff = totalPrice - priceForAGift;
+                Console.WriteLine($"She is left with {Math.Floor(diff)} leva.");
+            }
+            else
+            {
+                double diff = priceForAGift - totalPrice;
+                Console.WriteLine($"She will have to borrow {Math.Ceiling(diff)} leva.");
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+using System;
+
+
+namespace SimpleOperationsAndMoreCalculationsMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double r = double.Parse(Console.ReadLine());
+
+            double area = r * r * 3.14159265358979;
+
+            double perimetur = 2 * 3.14159265358979 * r;
+
+            Console.WriteLine($"{area:F2}\n{perimetur:F2}");
+        }
+    }
+}

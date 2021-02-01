@@ -1,0 +1,79 @@
+using System;
+
+namespace SimpleOperationsAndMoreCalculationsMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double chrysanthemumCount = double.Parse(Console.ReadLine());
+            double roseCount = double.Parse(Console.ReadLine());
+            double tulipsCount = double.Parse(Console.ReadLine());
+            string season = Console.ReadLine();
+            string isHoliday = Console.ReadLine();
+
+            double flowersCount = chrysanthemumCount + roseCount + tulipsCount;
+
+            double chrysanthemumPrice = 0.00;
+            double rosePrice = 0.00;
+            double tulipsPrice = 0.00;
+
+            double price = 0.00;
+            double totalPrice = 0.00;
+
+            if (season == "Spring"||season == "Summer")
+            {
+                chrysanthemumPrice =chrysanthemumCount* 2;
+                rosePrice = roseCount * 4.1;
+                tulipsPrice = tulipsCount*2.5;
+                price = chrysanthemumPrice + rosePrice + tulipsPrice;
+
+                if (isHoliday == "Y")
+                {
+                    price *= 1.15;
+                }
+                if (tulipsCount>=7&&season == "Spring")
+                {
+                    price *= 0.95;
+                }
+                if (roseCount >= 10 && season == "Winter")
+                {
+                    price *= 0.9;
+                }
+                if (flowersCount >=20)
+                {
+                    price *= 0.8;
+                }
+               
+                totalPrice = price + 2;
+                Console.WriteLine($"{totalPrice:F2}");
+            }
+            else
+            {
+                chrysanthemumPrice = chrysanthemumCount *3.75;
+                rosePrice = roseCount*4.5;
+                tulipsPrice = tulipsCount * 4.15;
+                price = chrysanthemumPrice + rosePrice + tulipsPrice;
+
+                if (isHoliday == "Y")
+                {
+                    price *= 1.15;
+                }
+                if (tulipsCount >= 7 && season == "Spring")
+                {
+                    price *= 0.95;
+                }
+                if (roseCount >= 10 && season == "Winter")
+                {
+                    price *= 0.9;
+                }
+                if (flowersCount >= 20)
+                {
+                    price *= 0.8;
+                }
+                totalPrice = price + 2;
+                Console.WriteLine($"{totalPrice:F2}");
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+using System;
+
+namespace SimpleOperationsAndMoreCalculations
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string firstWord = string.Empty;
+            string output = string.Empty;
+
+            int cCount = 0;
+            int oCount = 0;
+            int nCount = 0;
+
+            while (true)
+            {
+                string command = Console.ReadLine();
+
+                if (command == "End")
+                {
+                    break;
+                }
+
+                char letter = command[0];
+
+                if ((letter >= 'a' && letter <= 'z') || (letter >= 'A' && letter <= 'Z'))
+                {
+                    if (letter == 'c' && cCount == 0)
+                    {
+                        cCount++;
+                    }
+                    else if (letter == 'o' && oCount == 0)
+                    {
+                        oCount++;
+
+                    }
+                    else if (letter == 'n' && nCount == 0)
+                    {
+                        nCount++;
+                    }
+                    else
+                    {
+                        firstWord += letter;
+                    }
+
+                    if (cCount + nCount + oCount == 3)
+                    {
+                        output += firstWord;
+                        output += " ";
+
+
+
+                        firstWord = string.Empty;
+
+                        cCount = 0;
+                        oCount = 0;
+
+                        nCount = 0;
+
+                    }
+                }
+            }
+
+
+
+            Console.WriteLine(output);
+        }
+    }
+}

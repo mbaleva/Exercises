@@ -1,0 +1,22 @@
+using System;
+
+
+namespace NestedLoopsLab
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double n = double.Parse(Console.ReadLine());
+            double m = double.Parse(Console.ReadLine());
+            double vegetables = double.Parse(Console.ReadLine());
+            double fruits = double.Parse(Console.ReadLine());
+
+            double vegtablesPrice = n * vegetables;
+            double fruitPrice = m * fruits;
+            double totalPriceInBGN = vegtablesPrice + fruitPrice;
+            double totalPrice = totalPriceInBGN / 1.94;
+            Console.WriteLine($"{totalPrice:F2}");
+        }
+    }
+}

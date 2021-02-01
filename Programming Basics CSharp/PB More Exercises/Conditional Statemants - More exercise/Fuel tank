@@ -1,0 +1,52 @@
+using System;
+
+namespace SimpleOperationsAndMoreCalculationsMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string typeFuel = Console.ReadLine();
+            double litersFuel = double.Parse(Console.ReadLine());
+
+            if (typeFuel != "Diesel"&&typeFuel!="Gasoline"&&typeFuel!="Gas")
+            {
+                Console.WriteLine("Invalid fuel!");
+            }
+            if (typeFuel == "Diesel")
+            {
+                if (litersFuel>=25)
+                {
+                    Console.WriteLine($"You have enough diesel.");
+                }
+                else
+                {
+                    Console.WriteLine($"Fill your tank with diesel!");
+                }
+            }
+            if (typeFuel == "Gasoline")
+            {
+                if (litersFuel >= 25)
+                {
+                    Console.WriteLine($"You have enough gasoline.");
+                }
+                else
+                {
+                    Console.WriteLine($"Fill your tank with gasoline!");
+                }
+            }
+            if (typeFuel == "Gas")
+            {
+                if (litersFuel >= 25)
+                {
+                    Console.WriteLine($"You have enough gas.");
+                }
+                else
+                {
+                    Console.WriteLine($"Fill your tank with gas!");
+                }
+            }
+
+        }
+    }
+}

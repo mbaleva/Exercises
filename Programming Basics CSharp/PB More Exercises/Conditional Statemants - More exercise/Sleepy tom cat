@@ -1,0 +1,34 @@
+using System;
+
+
+namespace SimpleOperationsAndMoreCalculationsMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int holidays = int.Parse(Console.ReadLine());
+
+            int workingDays = 365 - holidays;
+
+            int playTime = workingDays * 63 + holidays * 127;
+
+            int diff = 30000 - playTime;
+
+            if (30000>=playTime)
+            {
+                double hours = diff / 60;
+                int minutes = diff % 60;
+                Console.WriteLine($"Tom sleeps well\n{Math.Floor(hours)} hours and {minutes} minutes less for play");
+            }
+            else
+            {
+                int difference = playTime - 30000;
+                double hours = difference / 60;
+                int minutes = difference % 60;
+                Console.WriteLine($"Tom will run away\n{Math.Floor(hours)} hours and {minutes} minutes more for play");
+
+            }
+        }
+    }
+}

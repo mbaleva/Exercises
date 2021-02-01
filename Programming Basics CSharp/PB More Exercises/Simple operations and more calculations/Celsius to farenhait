@@ -1,0 +1,16 @@
+using System;
+
+
+namespace NestedLoopsLab
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double c = double.Parse(Console.ReadLine());
+            
+            double trapezuidArea = c*1.8+32;
+            Console.WriteLine($"{trapezuidArea:F2}");
+        }
+    }
+}

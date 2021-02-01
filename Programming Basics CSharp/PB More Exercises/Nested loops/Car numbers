@@ -1,0 +1,57 @@
+using System;
+using System.Diagnostics.CodeAnalysis;
+
+namespace ConditionalExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int startNumber = int.Parse(Console.ReadLine());
+            int endNumber = int.Parse(Console.ReadLine());
+
+            for (int firstDigit = startNumber; firstDigit <= endNumber; firstDigit++)
+            {
+                for (int secondDigit = startNumber; secondDigit <=endNumber; secondDigit++)
+                {
+                    for (int thirdDigit = startNumber; thirdDigit <= endNumber; thirdDigit++)
+                    {
+                        for (int fourthDigit = startNumber; fourthDigit <= endNumber; fourthDigit++)
+                        {
+                            if (firstDigit%2==0)
+                            {
+                                if (fourthDigit%2!=0)
+                                {
+                                    if (firstDigit>fourthDigit)
+                                    {
+                                        int sum = secondDigit + thirdDigit;
+
+                                        if (sum%2==0)
+                                        {
+                                            Console.Write($"{firstDigit}{secondDigit}{thirdDigit}{fourthDigit} ");
+                                        }
+                                    }
+                                }
+                            }
+                            else if (firstDigit%2!=0)
+                            {
+                                if (fourthDigit%2==0)
+                                {
+                                    if (firstDigit > fourthDigit)
+                                    {
+                                        int sum = secondDigit + thirdDigit;
+
+                                        if (sum % 2 == 0)
+                                        {
+                                            Console.Write($"{firstDigit}{secondDigit}{thirdDigit}{fourthDigit} ");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

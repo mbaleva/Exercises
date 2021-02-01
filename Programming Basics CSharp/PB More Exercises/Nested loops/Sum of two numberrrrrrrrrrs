@@ -1,0 +1,36 @@
+using System;
+using System.Diagnostics.CodeAnalysis;
+
+namespace NestedLoopsLab
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int starNumber = int.Parse(Console.ReadLine());
+            int endNumber = int.Parse(Console.ReadLine());
+            int magicNumber = int.Parse(Console.ReadLine());
+
+            int counter = 0;
+
+            for (int i = starNumber; i <=endNumber; i++)
+            {
+                for (int j = starNumber; j <=endNumber; j++)
+                {
+                    counter++;
+                    int sum = i + j;
+                    if (sum == magicNumber)
+                    {
+                        Console.WriteLine($"Combination N:{counter} ({i} + {j} = {magicNumber})");
+                        Environment.Exit(0);
+                    }
+                   
+                }
+            }
+            Console.WriteLine($"{counter} combinations - neither equals {magicNumber}");
+        }
+    }
+}
+
+        
+   

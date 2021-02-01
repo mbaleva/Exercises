@@ -1,0 +1,83 @@
+using System;
+
+namespace SimpleOperationsAndMoreCalculationsMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double budjet = double.Parse(Console.ReadLine());
+            string category = Console.ReadLine();
+            double peopleCount = double.Parse(Console.ReadLine());
+
+            double pricePerVIP = 499.99;
+            double pricePerNormal = 249.99;
+
+            double tickets = 0.00;
+            if (category == "Normal")
+            {
+                tickets = peopleCount * 249.99;
+                if (peopleCount >= 1 && peopleCount <= 4)
+                {
+                    budjet *= 0.25;
+
+                }
+                if (peopleCount >= 5 && peopleCount <= 9)
+                {
+                    budjet *= 0.4;
+                }
+                if (peopleCount >= 10 && peopleCount <= 24)
+                {
+                    budjet *= 0.5;
+                }
+                if (peopleCount >= 25 && peopleCount <= 49)
+                {
+                    budjet *= 0.4;
+                }
+                if (peopleCount >= 50)
+                {
+                    budjet *= 0.75;
+                    
+                }
+            }
+            else
+            {
+                tickets = peopleCount * 499.99;
+                if (peopleCount >= 1 && peopleCount <= 4)
+                {
+                    budjet *= 0.25;
+
+                }
+                if (peopleCount >= 5 && peopleCount <= 9)
+                {
+                    budjet *= 0.4;
+                }
+                if (peopleCount >= 10 && peopleCount <= 24)
+                {
+                    budjet *= 0.5;
+                }
+                if (peopleCount >= 25 && peopleCount <= 49)
+                {
+                    budjet *= 0.6;
+                }
+                if (peopleCount >= 50)
+                {
+                    budjet *= 0.75;
+
+                }
+            }
+            
+            
+            if (budjet >= tickets)
+            {
+                double diff = budjet - tickets;
+                Console.WriteLine($"Yes! You have {diff:F2} leva left.");
+            }
+            else
+            {
+                double neededMoney = tickets - budjet;
+                Console.WriteLine($"Not enough money! You need {neededMoney:F2} leva.");
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            double waterPrice = n * 20;
+            double internetPrice = n * 15;
+            double electricityPrice = 0.00;
+            double electricityTotalPrice = 0.00;
+            double othersPrice = 0.00;
+
+            for (int i = 1; i <= n; i++)
+            {
+                double electricity = double.Parse(Console.ReadLine());
+                electricityTotalPrice += electricity;
+
+                electricityPrice = (electricity + 20 + 15)*1.2;
+                othersPrice += electricityPrice;
+            }
+            double averageSum = (electricityTotalPrice + waterPrice + internetPrice+othersPrice) / n;
+
+            Console.WriteLine($"Electricity: {electricityTotalPrice:F2} lv");
+            Console.WriteLine($"Water: {waterPrice:F2} lv");
+            Console.WriteLine($"Internet: {internetPrice:F2} lv");
+            Console.WriteLine($"Other: {othersPrice:F2} lv");
+            Console.WriteLine($"Average: {averageSum:F2} lv");
+        }
+    }
+}

@@ -1,0 +1,43 @@
+using System;
+
+
+namespace ConditionalExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int totalDays = int.Parse(Console.ReadLine());
+            int hoursForOneDay = int.Parse(Console.ReadLine());
+
+            int countDays = 0;
+
+            double charge = 0.00;
+            double totalSum = 0.00;
+
+            for (int days = 1; days <= totalDays; days++)
+            {
+                countDays++;
+                for (int hours = 1; hours <= hoursForOneDay; hours++)
+                {
+                    if (days%2==0&&hours%2!=0)
+                    {
+                        charge += 2.5;
+                    }
+                    else if (days%2!=0&&hours%2==0)
+                    {
+                        charge += 1.25;
+                    }
+                    else
+                    {
+                        charge += 1;
+                    }
+                }
+                totalSum += charge;
+                Console.WriteLine($"Day: {countDays} - {charge:F2} leva");
+                charge = 0;
+            }
+            Console.WriteLine($"Total: {totalSum:F2} leva");
+        }
+    }
+}

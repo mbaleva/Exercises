@@ -1,0 +1,62 @@
+using System;
+
+namespace SimpleOperationsAndMoreCalculationsMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double juniorsCount = double.Parse(Console.ReadLine());
+            double seniorsCount = double.Parse(Console.ReadLine());
+            string type = Console.ReadLine();
+
+            double priceForJuniors = 0.00;
+            double priceForSeniors = 0.00;
+            double totalPrice = 0.00;
+            double playersCounter = juniorsCount + seniorsCount;
+
+
+            if (type == "trail")
+            {
+                priceForJuniors = juniorsCount * 5.5;
+                priceForSeniors = seniorsCount * 7;
+                totalPrice = priceForSeniors + priceForJuniors;
+                totalPrice *= 0.95;
+            }
+            if (type == "downhill")
+            {
+                priceForJuniors = juniorsCount * 12.25;
+                priceForSeniors = seniorsCount * 13.75;
+                totalPrice = priceForSeniors + priceForJuniors;
+                totalPrice *= 0.95;
+            }
+            if (type == "road")
+            {
+                priceForJuniors = juniorsCount * 20;
+                priceForSeniors = seniorsCount * 21.5;
+                totalPrice = priceForSeniors + priceForJuniors;
+                totalPrice *= 0.95;
+            }
+            if (type == "cross-country")
+            {
+                if (playersCounter>=50)
+                {
+                    double priceForCrossCountryForJuniors = 8 * 0.75;
+                    double priceForCrossCountryForSeniors = 9.5 * 0.75;
+                    priceForJuniors = juniorsCount * priceForCrossCountryForJuniors;
+                    priceForSeniors = seniorsCount * priceForCrossCountryForSeniors;
+                    totalPrice = priceForSeniors + priceForJuniors;
+                    totalPrice *= 0.95;
+                }
+                else
+                {
+                    priceForJuniors = juniorsCount * 8;
+                    priceForSeniors = seniorsCount * 9.5;
+                    totalPrice = priceForSeniors + priceForJuniors;
+                    totalPrice *= 0.95;
+                }
+            }
+            Console.WriteLine($"{totalPrice:F2}");
+        }
+    }
+}

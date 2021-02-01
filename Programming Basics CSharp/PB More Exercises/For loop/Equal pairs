@@ -1,0 +1,45 @@
+using System;
+
+
+namespace ForLoopMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            int sum = 0;
+            int previousSum = 0;
+            int diff = 0;
+            int maxDiff = 0;
+
+
+            for (int i = 1; i <= n; i++)
+            {
+                int number = int.Parse(Console.ReadLine());
+                int currentNumber = int.Parse(Console.ReadLine());
+                sum = number + currentNumber;
+
+                if (i>1)
+                {
+                    diff = Math.Abs(sum - previousSum);
+                }
+                if (diff>maxDiff)
+                {
+                    maxDiff = diff;
+                }
+                previousSum = sum;
+                sum = 0;
+            }
+            if (maxDiff==0)
+            {
+                Console.WriteLine($"Yes, value={previousSum}");
+            }
+            else
+            {
+                Console.WriteLine($"No, maxdiff={maxDiff}");
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+using System;
+
+
+namespace SimpleOperationsAndMoreCalculationsMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double mackerelPrice = double.Parse(Console.ReadLine());
+            double spratPrice = double.Parse(Console.ReadLine());
+            double bunitoAmount = double.Parse(Console.ReadLine());
+            double fishAmount = double.Parse(Console.ReadLine());
+            double mussels = double.Parse(Console.ReadLine());
+
+            double bunitoPrice = mackerelPrice + mackerelPrice * 0.60;
+            double bunitoTotalPrice = bunitoAmount * bunitoPrice;
+
+            double fishPrice = spratPrice + spratPrice * 0.80;
+            double fishTotalPrice = fishPrice * fishAmount;
+
+            double musselsTotalPrice = mussels * 7.50;
+
+            double totalPrice = musselsTotalPrice + fishTotalPrice + bunitoTotalPrice;
+            Console.WriteLine($"{totalPrice:F2}");
+        }
+    }
+}

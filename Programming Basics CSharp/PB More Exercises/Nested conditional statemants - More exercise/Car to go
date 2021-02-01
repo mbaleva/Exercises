@@ -1,0 +1,58 @@
+using System;
+
+namespace SimpleOperationsAndMoreCalculationsMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double budjet = double.Parse(Console.ReadLine());
+            string season = Console.ReadLine();
+
+            string typeClass = string.Empty;
+            string typeCar = string.Empty;
+
+            double price = 0.00;
+
+            if (budjet<=100)
+            {
+                typeClass = "Economy class";
+
+                if (season == "Summer")
+                {
+                    typeCar = "Cabrio";
+                    price =budjet* 0.35;
+                }
+                else
+                {
+                    // Winter
+                    typeCar = "Jeep";
+                    price =budjet* 0.65;
+                }
+            }
+            else if (budjet>100&&budjet<=500)
+            {
+                typeClass = "Compact class";
+
+                if (season == "Summer")
+                {
+                    typeCar = "Cabrio";
+                    price =budjet* 0.45;
+                }
+                else
+                {
+                    // Winter
+                    typeCar = "Jeep";
+                    price = budjet *  0.8;
+                }
+            }
+            else if (budjet>500)
+            {
+                typeClass = "Luxury class";
+                typeCar = "Jeep";
+                price = budjet*0.9;
+            }
+            Console.WriteLine($"{typeClass}\n{typeCar} - {price:F2}");
+        }
+    }
+}

@@ -1,0 +1,65 @@
+using System;
+
+
+namespace SimpleOperationsAndMoreCalculations
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            double sum = 0.00;
+
+
+            double count3 = 0;
+            double countt3 = 0;
+
+            double count4 = 0;
+            double countt4 = 0;
+
+            double count12 = 0;
+            double countt12 = 0;
+
+            double minibusPrice = 0.00;
+            double truckPrice = 0.00;
+            double trainPrice = 0.00;
+            for (int i = 1; i <=n; i++)
+            {
+                double cargo = double.Parse(Console.ReadLine());
+                sum += cargo;
+
+                if (cargo<=3)
+                {
+                    count3 = cargo;
+                    countt3 += count3;
+                    cargo *= 200;
+                    minibusPrice += cargo;
+                }
+                else if (cargo>=4&&cargo<=11)
+                {
+                    count4 = cargo;
+                    countt4 += count4;
+                    cargo *= 175;
+                    truckPrice += cargo;
+                }
+                else if (cargo>=12)
+                {
+                    count12 = cargo;
+                    countt12 += count12;
+                    cargo *= 120;
+                    trainPrice += cargo;
+                }
+            }
+            double averagePricePerOneTone = (minibusPrice + truckPrice + trainPrice) / sum;
+            double minibusTotalPrice = (countt3 / sum) * 100;
+            double truckTotalPrice = (countt4 / sum) * 100;
+            double trainTotalPrice = (countt12 / sum) * 100;
+
+            Console.WriteLine($"{averagePricePerOneTone:F2}");
+            Console.WriteLine($"{minibusTotalPrice:F2}%");
+            Console.WriteLine($"{truckTotalPrice:F2}%");
+            Console.WriteLine($"{trainTotalPrice:F2}%");
+        }
+    }
+}

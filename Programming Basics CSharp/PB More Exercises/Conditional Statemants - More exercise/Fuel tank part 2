@@ -1,0 +1,69 @@
+using System;
+
+namespace SimpleOperationsAndMoreCalculationsMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string typeFuel = Console.ReadLine();
+            double litersFuel = double.Parse(Console.ReadLine());
+            string disountCard = Console.ReadLine();
+
+            double gasolinePricePerLiter = 2.22;
+            double dieselPricePerLiter = 2.33;
+            double gasPricePerLiter = 0.93;
+
+            
+            
+            double totalPrice = 0.00;
+
+            if (disountCard == "Yes")
+            {
+                gasolinePricePerLiter -= 0.18;
+                dieselPricePerLiter -= 0.12;
+                gasPricePerLiter -= 0.08;
+                
+                if (typeFuel == "Gasoline")
+                {
+                    totalPrice = litersFuel * gasolinePricePerLiter;
+                }
+                if (typeFuel == "Gas")
+                {
+                    totalPrice = litersFuel * gasPricePerLiter;
+                }
+                if (typeFuel == "Diesel")
+                {
+                    totalPrice = litersFuel * dieselPricePerLiter;
+                }
+                
+            }
+            else
+            {
+                if (typeFuel == "Gasoline")
+                {
+                    totalPrice = litersFuel * gasolinePricePerLiter;
+                }
+                if (typeFuel == "Gas")
+                {
+                    totalPrice = litersFuel * gasPricePerLiter;
+                }
+                if (typeFuel == "Diesel")
+                {
+                    totalPrice = litersFuel * dieselPricePerLiter;
+                }
+            }
+            if (litersFuel >= 20 && litersFuel <= 25)
+            {
+                totalPrice = totalPrice * 0.92;
+            }
+            else if (litersFuel > 25)
+            {
+                totalPrice = totalPrice * 0.9;
+            }
+            
+            Console.WriteLine($"{totalPrice:F2} lv.");
+            
+        }
+    }
+}

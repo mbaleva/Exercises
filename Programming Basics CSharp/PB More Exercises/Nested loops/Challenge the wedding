@@ -1,0 +1,36 @@
+using System;
+
+namespace ConditionalExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int maleCount = int.Parse(Console.ReadLine());
+            int femaleCount = int.Parse(Console.ReadLine());
+            int tableCount = int.Parse(Console.ReadLine());
+
+            int tableCounter = 0;
+
+            for (int m = 1; m <= maleCount; m++)
+            {
+               
+
+                for (int f = 1; f <= femaleCount; f++)
+                {
+                    tableCounter++;
+                    Console.Write($"({m} <-> {f}) ");
+                    if (tableCounter == tableCount)
+                    {
+                        break;
+                    }
+                }
+                if (tableCounter == tableCount)
+                {
+                    break;
+                }
+            }
+
+        }
+    }
+}

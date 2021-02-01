@@ -1,0 +1,63 @@
+using System;
+
+
+namespace ConditionalExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int m = int.Parse(Console.ReadLine());
+
+            int counter = 0;
+
+            bool isFindPassword = false;
+            bool row = false;
+
+            int firstDigit = 0;
+            int secondDigit = 0;
+            int thirdDigit = 0;
+            int fourthDigit = 0;
+
+            for (int a = 1; a <= 9; a++)
+            {
+                for (int b = 1; b <= 9; b++)
+                {
+                    for (int c = 1; c <= 9; c++)
+                    {
+                        for (int d = 1; d <= 9; d++)
+                        {
+                            if (a*b+c*d==m&&a<b&&c>d)
+                            {
+                                row = true;
+                                Console.Write($"{a}{b}{c}{d} ");
+                                counter++;
+                                if (counter == 4)
+                                {
+                                    firstDigit = a;
+                                    secondDigit = b;
+                                    thirdDigit = c;
+                                    fourthDigit = d;
+                                    isFindPassword = true;
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+            if (row)
+            {
+                Console.WriteLine();
+            }
+            if (isFindPassword)
+            {
+                Console.WriteLine($"Password: {firstDigit}{secondDigit}{thirdDigit}{fourthDigit}");
+            }
+            else
+            {
+                Console.WriteLine($"No!");
+            }
+        }
+    }
+}

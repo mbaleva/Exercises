@@ -1,0 +1,34 @@
+using System;
+
+namespace SimpleOperationsAndMoreCalculationsMoreExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double daysCount = double.Parse(Console.ReadLine());
+            double food = double.Parse(Console.ReadLine());
+            double foodForDogPerOneDay = (double.Parse(Console.ReadLine()));
+            double foodForCatPerOneDay = (double.Parse(Console.ReadLine()));
+            double foodForTurtlePerOneDay = (double.Parse(Console.ReadLine()))/1000;
+
+            double foodForDog = (foodForDogPerOneDay * daysCount);
+            double foodForCat = (foodForCatPerOneDay * daysCount);
+            double foodForTurtle = (foodForTurtlePerOneDay * daysCount);
+
+            double totalFood = foodForCat + foodForDog + foodForTurtle;
+
+            if (totalFood<=food)
+            {
+                double diff = food - totalFood;
+                Console.WriteLine($"{Math.Floor(diff)} kilos of food left.");
+            }
+            else
+            {
+                double diff = totalFood - food;
+                Console.WriteLine($"{Math.Ceiling(diff)} more kilos of food are needed.");
+                
+            }
+        }
+    }
+}

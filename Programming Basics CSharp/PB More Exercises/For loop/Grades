@@ -1,0 +1,54 @@
+using System;
+
+
+namespace SimpleOperationsAndMoreCalculations
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double countStudents = double.Parse(Console.ReadLine());
+
+            double countFor5 = 0;
+            double countFor4 = 0;
+            double countFor3 = 0;
+            double countFor2 = 0;
+
+            double averageSuccess = 0.00;
+
+            for (int i = 1; i <= countStudents; i++)
+            {
+                double grade = double.Parse(Console.ReadLine());
+                averageSuccess += grade;
+                if (grade<3.00)
+                {
+                    countFor2++;
+                }
+                else if (grade>=3&&grade<4.00)
+                {
+                    countFor3++;
+                }
+                else if (grade>=4&&grade<5.00)
+                {
+                    countFor4++;
+                }
+                else if (grade>=5)
+                {
+                    countFor5++;
+                }
+            }
+            
+            double failsPercentage = (countFor2 / countStudents) * 100;
+            double threePercentage = (countFor3 / countStudents) * 100;
+            double fourPercentage = (countFor4 / countStudents) * 100;
+            double fivePercentage = (countFor5 / countStudents) * 100;
+            double averageGrade = averageSuccess / countStudents;
+
+            Console.WriteLine($"Top students: {fivePercentage:F2}%");
+            Console.WriteLine($"Between 4.00 and 4.99: {fourPercentage:F2}%");
+            Console.WriteLine($"Between 3.00 and 3.99: {threePercentage:F2}%");
+            Console.WriteLine($"Fail: {failsPercentage:F2}%");
+            Console.WriteLine($"Average: {averageGrade:F2}");
+        }
+    }
+}
