@@ -1,0 +1,79 @@
+using System;
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string typeFlowers = Console.ReadLine();
+            int countFlowers = int.Parse(Console.ReadLine());
+            double budjet = double.Parse(Console.ReadLine());
+
+           
+
+
+            double roses = 5;
+            double dahlias = 3.80;
+            double tulips = 2.80;
+            double narcissus = 3;
+            double gladiolus = 2.50;
+
+
+            double totalMoney = 0.00;
+
+            if (typeFlowers == "Roses")
+            {
+                totalMoney = roses * countFlowers;
+                if (countFlowers > 80)
+                {
+                    totalMoney = totalMoney * 0.9;
+                }
+            }
+            else if (typeFlowers == "Dahlias")
+            {
+                totalMoney = dahlias * countFlowers;
+                if (countFlowers > 90)
+                {
+                    totalMoney = totalMoney * 0.85;
+                }
+            }
+            else if (typeFlowers == "Tulips")
+            {
+                totalMoney = tulips * countFlowers;
+                if (countFlowers > 80)
+                {
+                    totalMoney = totalMoney * 0.85;
+                }
+            }
+            else if (typeFlowers == "Narcissus")
+            {
+                totalMoney = narcissus * countFlowers;
+                if (countFlowers < 120)
+                {
+                    totalMoney = totalMoney * 1.15;
+                }
+            }
+            else if (typeFlowers == "Gladiolus")
+            {
+                totalMoney = gladiolus * countFlowers;
+                if (countFlowers < 80)
+                {
+                    totalMoney = totalMoney * 1.2;
+                }
+            }
+
+            double moneyLeft = budjet - totalMoney;
+            double neededMoney = totalMoney - budjet;
+
+            if (moneyLeft >= 0)
+            {
+                Console.WriteLine($"Hey, you have a great garden with {countFlowers} {typeFlowers} and {moneyLeft:F2} leva left.");
+            }
+            else
+            { 
+            Console.WriteLine($"Not enough money, you need {(moneyLeft*-1):F2} leva more.");
+            }
+        }
+    }
+}

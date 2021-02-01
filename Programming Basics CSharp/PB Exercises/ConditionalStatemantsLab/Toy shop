@@ -1,0 +1,47 @@
+using System;
+
+namespace ConditionalStatemantsLab
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double neededMoney = double.Parse(Console.ReadLine());
+            int soldPuzzles = int.Parse(Console.ReadLine());
+            int soldDolls = int.Parse(Console.ReadLine());
+            int soldTeddyBears = int.Parse(Console.ReadLine());
+            int soldMinions = int.Parse(Console.ReadLine());
+            int soldTrucks = int.Parse(Console.ReadLine());
+
+            double puzzlesMoney = soldPuzzles * 2.60;
+            double dollsMoney = soldDolls * 3;
+            double teddyBearsMoney = soldTeddyBears * 4.1;
+            double minionsMoney = soldMinions * 8.2;
+            double trucksMoney = soldTrucks * 2;
+
+            double totalMoney = puzzlesMoney + dollsMoney + teddyBearsMoney +
+                minionsMoney + trucksMoney;
+
+            int soldToysCount = soldPuzzles + soldDolls + soldTeddyBears + soldMinions + soldTrucks;
+
+            if (soldToysCount >= 50)
+            {
+                totalMoney = totalMoney * 0.75;
+            }
+
+            totalMoney = totalMoney * 0.9;
+
+            if (totalMoney >= neededMoney)
+            {
+                double remainingMoney = totalMoney - neededMoney;
+                Console.WriteLine($"Yes! {remainingMoney:F2} lv left. ");
+            }
+            else 
+            {
+                double neededMoney1 = neededMoney - totalMoney;
+                Console.WriteLine($"Not enough money! {neededMoney1:F2} lv needed. ");
+            }
+
+        }
+    }
+}

@@ -1,0 +1,41 @@
+using System;
+
+namespace ConditionalStatemantsExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Read hours and minutes
+            int hours= int.Parse(Console.ReadLine());
+            int minutes = int.Parse(Console.ReadLine());
+            // Add to minutes...
+            minutes = minutes + 15;
+            // minutes +=15
+
+            // Check if minutes > 59
+            if (minutes > 59)
+            {
+                hours= hours+ 1;
+                minutes = minutes - 60;
+            }
+            // Check if hours > 23
+            if (hours > 23)
+            {
+                hours = 0;
+            }
+            if (minutes < 10)
+            {
+                Console.WriteLine($"{hours}:0{minutes}");
+            }
+            else
+            {
+                Console.WriteLine($"{hours}:{minutes}");
+
+
+            }
+
+
+        }
+    }
+}

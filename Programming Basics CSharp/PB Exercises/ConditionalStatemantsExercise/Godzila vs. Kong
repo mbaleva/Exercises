@@ -1,0 +1,50 @@
+using System;
+
+namespace ConditionalStatemantsExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double budjet = double.Parse(Console.ReadLine());
+            int statist = int.Parse(Console.ReadLine());
+            double statistPrice = double.Parse(Console.ReadLine());
+
+            double decorSum = budjet * 0.1;
+
+            double statistSum = statist * statistPrice;
+            double statistDiscount = 0;
+            double totalMoney = 0;
+
+            if (statist > 150)
+            {
+                statistDiscount = statistSum - (statistSum * 0.1);
+                totalMoney = statistDiscount + decorSum;
+            }
+            else if (statist < 150)
+            {
+                totalMoney = statistSum + decorSum;
+                double NoDiscountMoney = budjet - totalMoney;
+
+
+            }
+            if (totalMoney > budjet)
+            {
+                double neededMoney = totalMoney - budjet;
+                Console.WriteLine($"Not enough money!\nWingard needs {neededMoney:F2} leva more.");
+
+            }
+            else if (totalMoney <= budjet)
+            {
+                double neededMoney = budjet - totalMoney;
+                Console.WriteLine($"Action!\nWingard starts filming with {neededMoney:F2} leva left.");
+            }
+
+
+
+
+
+        }
+    }
+}

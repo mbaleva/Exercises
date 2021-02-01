@@ -1,0 +1,65 @@
+using System;
+using System.Threading.Tasks.Dataflow;
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double numberOne = double.Parse(Console.ReadLine());
+            double numberTwo = double.Parse(Console.ReadLine());
+            string operand = Console.ReadLine();
+
+            double result = 0.00;
+            string typeNumber = "";
+            double residue = 0.00;
+
+            if (operand == "+")
+            {
+                result = numberOne + numberTwo;
+            }
+            else if (operand == "-")
+            {
+                result = numberOne - numberTwo;
+            }
+            else if (operand == "*")
+            {
+                result = numberOne * numberTwo;
+            }
+            else if (operand == "/")
+            {
+                result = numberOne / numberTwo;
+            }
+            else if (operand == "%")
+            {
+                result = numberOne % numberTwo;
+            }
+            if (result % 2 == 0)
+            {
+                typeNumber = "even";
+            }
+            else
+            {
+                typeNumber = "odd";
+
+            }
+            if (numberTwo == 0)
+            {
+                Console.WriteLine($"Cannot divide {numberOne} by zero");
+            }
+            else if (operand == "+" || operand == "-" || operand == "*")
+            {
+                Console.WriteLine($"{numberOne} {operand} {numberTwo} = {result} - {typeNumber}");
+            }
+            else if (operand == "/")
+            {
+                Console.WriteLine($"{numberOne} / {numberTwo} = {result:F2}");
+            }
+            else if (operand == "%")
+            {
+                Console.WriteLine($"{numberOne} % {numberTwo} = {result}");
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+using System;
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double budjet = double.Parse(Console.ReadLine());
+            string season = Console.ReadLine();
+            int fishermenCount = int.Parse(Console.ReadLine());
+
+            double price = 0.00;
+
+
+            if (season == "Spring")
+            {
+                price = 3000;
+            }
+            else if (season == "Summer" || season == "Autumn")
+            {
+                price = 4200;
+            }
+            else if (season == "Winter")
+            {
+                price = 2600;
+            }
+
+            double discountPercentage = 0.00;
+
+            if (fishermenCount <= 6)
+            {
+                price = price * 0.9;
+            }
+            else if (fishermenCount > 6 && fishermenCount <= 11)
+            {
+                price = price * 0.85;
+            }
+            else if (fishermenCount > 11)
+            {
+                price = price * 0.75;
+            }
+          
+
+            if (fishermenCount % 2 == 0 && season != "Autumn")
+            {
+                price = price * 0.95;
+            }
+            
+            double neededMoney = budjet - price;
+            double neededMoney1 = price - budjet;
+
+            if (price <= budjet)
+            {
+                Console.WriteLine($"Yes! You have {neededMoney:F2} leva left.");
+            }
+            else
+            {
+                Console.WriteLine($"Not enough money! You need {neededMoney1:F2} leva.");
+            }
+
+
+
+
+        }
+    }
+}

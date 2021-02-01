@@ -1,0 +1,61 @@
+using System;
+
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string month = Console.ReadLine();
+            int nights = int.Parse(Console.ReadLine());
+
+            double priceForStudio = 0.00;
+            double priceForApartment = 0.00;
+
+            string typeRoom = "";
+
+            if (month == "May" || month == "October")
+            {
+                priceForStudio = nights * 50;
+                priceForApartment = nights * 65;
+
+                if (nights > 7 && nights <= 14)
+                {
+                    priceForStudio = priceForStudio * 0.95;
+                }
+                else if (nights > 14)
+                {
+                    priceForStudio = priceForStudio * 0.7;
+                    priceForApartment = priceForApartment * 0.9;
+                }
+            }
+           else  if (month == "June" || month == "September")
+            {
+                priceForStudio = nights * 75.20;
+                priceForApartment = nights * 68.70;
+
+               
+                 if (nights > 14)
+                {
+                    priceForStudio = priceForStudio * 0.8;
+                    priceForApartment = priceForApartment * 0.9;
+                }
+            }
+            else if (month == "July" || month == "August")
+            {
+                priceForStudio = nights * 76;
+                priceForApartment = nights * 77;
+
+
+                if (nights > 14)
+                {
+                    
+                    priceForApartment = priceForApartment * 0.9;
+                }
+            }
+            Console.WriteLine($"Apartment: {priceForApartment:F2} lv.\nStudio: {priceForStudio:F2} lv.");
+
+        }
+    }
+}

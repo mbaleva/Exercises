@@ -1,0 +1,49 @@
+using System;
+
+
+namespace Scholarship
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double income = double.Parse(Console.ReadLine());
+            double averageSuccess = double.Parse(Console.ReadLine());
+            double salary = double.Parse(Console.ReadLine());
+
+            bool conditionForSocialScholarship = false;
+            if (income < salary && averageSuccess > 4.5) { conditionForSocialScholarship = true; }
+
+            bool conditionForGradesScholarship = false;
+            if (averageSuccess >= 5.50) { conditionForGradesScholarship = true; }
+
+            double moneyOfSocialScholarship = Math.Floor(0.35 * salary);
+            double moneyOfMarksScholarship = Math.Floor(25 * averageSuccess);
+
+            if (conditionForGradesScholarship == false && conditionForSocialScholarship == false)
+            {
+                Console.WriteLine("You cannot get a scholarship!");
+            }
+            else if (conditionForSocialScholarship == true && conditionForGradesScholarship == false)
+            {
+                Console.WriteLine($"You get a Social scholarship {moneyOfSocialScholarship} BGN");
+            }
+            else if (conditionForSocialScholarship == false && conditionForGradesScholarship == true)
+            {
+                Console.WriteLine($"You get a scholarship for excellent results {moneyOfMarksScholarship} BGN");
+            }
+            else if (conditionForSocialScholarship == true && conditionForGradesScholarship == true)
+            {
+                if (moneyOfSocialScholarship > moneyOfMarksScholarship)
+                {
+                    Console.WriteLine($"You get a Social scholarship {moneyOfSocialScholarship} BGN");
+                }
+                else
+                {
+                    Console.WriteLine($"You get a scholarship for excellent results {moneyOfMarksScholarship} BGN");
+                }
+            }
+
+        }
+    }
+}

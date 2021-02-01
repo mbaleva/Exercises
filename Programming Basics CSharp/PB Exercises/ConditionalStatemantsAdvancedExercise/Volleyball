@@ -1,0 +1,35 @@
+using System;
+
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string year = Console.ReadLine();
+            int holiday = int.Parse(Console.ReadLine());
+            int weekendsInTown = int.Parse(Console.ReadLine());
+
+            int weekendForOneYear = 48;
+
+            int weekendsInSofia = 48 - weekendsInTown;
+
+            double playInSofia = weekendsInSofia * 3.0 / 4.0;
+            double playInHoliday = holiday * 2.0 / 3.0;
+
+            double play = playInSofia + Math.Round(playInHoliday,3) + weekendsInTown;
+
+            if (year == "leap")
+            {
+                play = play * 1.15;
+
+                Console.WriteLine($"{Math.Floor(play)}");
+            }
+            else
+            {
+                Console.WriteLine($"{Math.Floor(play)}");
+            }
+        }
+    }
+}

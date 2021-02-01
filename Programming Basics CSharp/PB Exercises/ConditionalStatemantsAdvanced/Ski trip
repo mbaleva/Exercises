@@ -1,0 +1,86 @@
+using System;
+
+namespace ConditionalExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int days = int.Parse(Console.ReadLine()) ;
+            int nights = days - 1;
+            string room = Console.ReadLine();
+            string rating = Console.ReadLine();
+
+           
+
+            double pricePerNight = 0.00;
+            double totalPrice = 0.00;
+
+            if (room == "room for one person")
+            {
+                pricePerNight = 18;
+            }
+            else if (room == "apartment")
+            {
+                pricePerNight = 25;
+            }
+            else
+            {
+                //president apartment
+                pricePerNight = 35;
+            }
+            int discountPercent = 0;
+
+            if (room == "apartment")
+            {
+                if (days < 10)
+                {
+                    discountPercent = 30;
+                }
+                else if (days >= 10 && days <= 15)
+                {
+                    discountPercent = 35;
+                }
+                else if (days > 15)
+                {
+                    discountPercent = 50;
+                }
+            }
+            else if (room == "president apartment")
+            {
+                if (days < 10)
+                {
+                    discountPercent = 10;
+                }
+                else if (days > 10 && days < 15)
+                {
+                    discountPercent = 15;
+                }
+                else if (days > 15)
+                {
+                    discountPercent = 20;
+                }
+
+            }
+            totalPrice = nights * pricePerNight;
+            if (discountPercent != 0)
+            {
+                totalPrice = totalPrice * (100 - discountPercent) / 100;
+            }
+            if (rating == "positive")
+            {
+                totalPrice = totalPrice * 1.25;
+            }
+            else
+            {
+                totalPrice = totalPrice * 0.9;
+            }
+
+
+            Console.WriteLine($"{totalPrice:F2}");
+        }
+    }
+}
+
+        
+   

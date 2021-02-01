@@ -1,0 +1,94 @@
+using System;
+
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int examHour = int.Parse(Console.ReadLine());
+            int examMinute = int.Parse(Console.ReadLine());
+            int arrivalHour = int.Parse(Console.ReadLine());
+            int arrivalMinute = int.Parse(Console.ReadLine());
+
+            int examHour1 = examHour * 60;
+            int examTime = examHour1 + examMinute;
+
+            int arrivalHour1 = arrivalHour * 60;
+            int arrivalTime = arrivalHour1 + arrivalMinute;
+            int neededTime = 0;
+           
+            int hours = 0;
+            int minutes = 0;
+
+            if (arrivalTime < examTime&& examTime - arrivalTime> 30)
+            {
+                neededTime = examTime - arrivalTime;
+                if (neededTime < 60)
+                {
+                   
+                        Console.WriteLine($"Early\n{neededTime} minutes before the start");
+                   
+                }
+                else if (neededTime >= 60)
+                {
+                    neededTime = examTime - arrivalTime;
+                    minutes = neededTime % 60;
+                    hours = neededTime / 60;
+                    if (minutes >= 10)
+                    { 
+                        Console.WriteLine($"Early\n{hours}:{minutes} hours before the start"); 
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Early\n{hours}:0{minutes} hours before the start");
+                    }
+                }
+            }
+            else if (arrivalTime > examTime)
+            {
+                neededTime = arrivalTime - examTime;
+                if (neededTime < 60)
+                {
+                   
+                        Console.WriteLine($"Late\n{neededTime} minutes after the start");
+                   
+                }
+                else if (neededTime >= 60)
+                {
+                    neededTime = arrivalTime - examTime;
+                    minutes = neededTime % 60;
+                    hours = neededTime / 60;
+                    if (minutes >= 10)
+                    {
+                        Console.WriteLine($"Late\n{hours}:{minutes} hours after the start");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Late\n{hours}:0{minutes} hours after the start");
+
+                    }
+
+                }
+            }
+            else if (arrivalTime == examTime || examTime - arrivalTime <= 30)
+            {
+                neededTime = examTime - arrivalTime;
+
+                if (neededTime == 0)
+                {
+                    Console.WriteLine("On time");
+
+                }
+                else if (neededTime != 0)
+                {
+                    
+                        Console.WriteLine($"On time\n{neededTime} minutes before the start");
+
+                    
+                }
+            }
+        }
+    }
+}
