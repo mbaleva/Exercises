@@ -1,0 +1,19 @@
+using System;
+
+namespace NestedLoopsLab
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (int numbers = 1; numbers <= 10; numbers++)
+            {
+                for (int number = 1; number <=10; number++)
+                {
+                    int result = numbers * number;
+                    Console.WriteLine($"{numbers} * {number} = {result}");
+                }
+            }
+        }
+    }
+}

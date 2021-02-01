@@ -1,0 +1,69 @@
+using System;
+
+
+namespace NestedLoopsLab
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int standardCounter = 0;
+            int kidsCounter = 0;
+            int studentsCounter = 0;
+            while (true)
+            {
+                string filmName = Console.ReadLine();
+
+                if (filmName == "Finish")
+                {
+                    break;
+                }
+                int capacity = int.Parse(Console.ReadLine());
+                int counter = 0;
+
+
+                while (true)
+                {
+
+                    string typeTicket = Console.ReadLine();
+
+                    if (typeTicket == "End")
+                    {
+                        break;
+                    }
+                    else if (typeTicket == "standard")
+                    {
+                        standardCounter++;
+                    }
+                    else if (typeTicket == "kid")
+                    {
+                        kidsCounter++;
+                    }
+                    else if (typeTicket == "student")
+                    {
+                        studentsCounter++;
+                    }
+                    counter++;
+                    if (counter == capacity)
+                    {
+                        break;
+                    }
+                }
+                double filmPercentage = counter*1.0 / capacity * 100;
+                Console.WriteLine($"{filmName} - {filmPercentage:F2}% full.");
+            }
+            int totalTickets = studentsCounter + kidsCounter + standardCounter;
+            double standardPercentage = standardCounter * 1.0 / totalTickets * 100;
+            double kidsPercentage = kidsCounter * 1.0 / totalTickets * 100;
+            double studentPercentage = studentsCounter * 1.0 / totalTickets * 100;
+
+            
+            Console.WriteLine($"Total tickets: {totalTickets}");
+            Console.WriteLine($"{studentPercentage:F2}% student tickets.");
+            Console.WriteLine($"{standardPercentage:F2}% standard tickets.");
+            Console.WriteLine($"{kidsPercentage:F2}% kids tickets.");
+        }
+    }
+}
+
+        

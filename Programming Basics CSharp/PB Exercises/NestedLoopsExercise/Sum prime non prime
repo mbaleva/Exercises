@@ -1,0 +1,63 @@
+using System;
+
+
+namespace NestedLoopsLab
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int primeNumbersSum = 0;
+            int nonPrimeNumbersSum = 0;
+
+            while (true)
+            {
+                string command = Console.ReadLine();
+
+                if (command == "Stop")
+                {
+                    break;
+                }
+                if (command == "stop")
+                {
+                    break;
+                }
+                int number = int.Parse(command);
+
+                if (number < 0)
+                {
+                    Console.WriteLine("Number is negative.");
+                }
+                else
+                {
+                    bool isPrimeNumber = true;
+
+                    for (int i = 2; i <= number - 1; i++)
+                    {
+
+                        if (number % i == 0)
+                        {
+                            isPrimeNumber = false;
+                            break;
+                        }
+
+
+                    }
+
+                    if (isPrimeNumber)
+                    {
+                        primeNumbersSum += number;
+                    }
+                    else
+                    {
+                        nonPrimeNumbersSum += number;
+                    }
+                }
+            }
+            //Sum of all prime numbers is: 29
+            //Sum of all non prime numbers is: 13
+            Console.WriteLine($"Sum of all prime numbers is: {primeNumbersSum}");
+            Console.WriteLine($"Sum of all non prime numbers is: {nonPrimeNumbersSum}");
+        }
+    }
+}

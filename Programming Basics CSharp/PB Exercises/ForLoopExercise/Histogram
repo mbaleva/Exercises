@@ -1,0 +1,55 @@
+using System;
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double n = double.Parse(Console.ReadLine());
+
+            double count = 0;
+            double count1 = 0;
+            double count2 = 0;
+            double count3 = 0;
+            double count4 = 0;
+
+            for (int i = 0; i <n ; i++)
+            {
+                double currentNumber = double.Parse(Console.ReadLine());
+
+                if (currentNumber < 200)
+                {
+                    count++;
+                }
+               else if (currentNumber >= 200 && currentNumber <= 399)
+                {
+                    count1++;
+                }
+                else if (currentNumber >= 400 && currentNumber <= 599)
+                {
+                    count2++;
+                }
+                else if (currentNumber >= 600 && currentNumber <= 799)
+                {
+                    count3++;
+                }
+                else if (currentNumber >= 800 && currentNumber <= 1000)
+                {
+                    count4++;
+                }
+            }
+            double percentage1 = (count / n) * 100;
+            double percentage2 = (count1 / n) * 100;
+            double percentage3 = (count2 / n) * 100;
+            double percentage4 = (count3 / n) * 100;
+            double percentage5 = (count4 / n) * 100;
+
+            Console.WriteLine($"{percentage1:F2}%");
+            Console.WriteLine($"{percentage2:F2}%");
+            Console.WriteLine($"{percentage3:F2}%");
+            Console.WriteLine($"{percentage4:F2}%");
+            Console.WriteLine($"{percentage5:F2}%");
+        }
+    }
+}

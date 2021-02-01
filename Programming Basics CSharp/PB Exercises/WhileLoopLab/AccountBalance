@@ -1,0 +1,33 @@
+using System;
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double totalSum = 0.00;
+
+            while (true)
+            {
+                string noMoney = Console.ReadLine();
+
+                if (noMoney == "NoMoreMoney")
+                {
+                    
+                    break;
+                }
+                double money = double.Parse(noMoney);
+
+                if (money < 0)
+                {
+                    Console.WriteLine("Invalid operation!");
+                    break;
+                }
+                totalSum += money;
+                Console.WriteLine($"Increase: {money:F2}");
+            }
+            Console.WriteLine($"Total: {totalSum:F2}");
+        }
+    }
+}

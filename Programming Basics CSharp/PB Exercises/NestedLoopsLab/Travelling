@@ -1,0 +1,39 @@
+using System;
+using System.Diagnostics.CodeAnalysis;
+
+namespace NestedLoopsLab
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double savings = 0.00;
+
+            while (true)
+            {
+                string destination = Console.ReadLine();
+                if (destination == "End")
+                {
+                    break;
+                }
+                double requeredBudjet = double.Parse(Console.ReadLine());
+                while (true)
+                {
+                    double savedMoney = double.Parse(Console.ReadLine());
+
+                    savings += savedMoney;
+
+                    if (savings>=requeredBudjet)
+                    {
+                        savings = 0.00;
+                        Console.WriteLine($"Going to {destination}!");
+                        break;
+                    }
+                }
+            }
+        }
+    }
+}
+
+        
+   

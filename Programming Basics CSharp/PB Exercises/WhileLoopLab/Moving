@@ -1,0 +1,41 @@
+using System;
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int length = int.Parse(Console.ReadLine());
+            int width = int.Parse(Console.ReadLine());
+            int height = int.Parse(Console.ReadLine());
+
+            int meters = length * width * height;
+
+            while (true)
+            {
+                string command = Console.ReadLine();
+
+                if (command == "Done")
+                {
+                    break;
+                }
+                int boxes = int.Parse(command);
+                meters -= boxes;
+
+
+                if (meters < 0)
+                {
+                    Console.WriteLine($"No more free space! You need {Math.Abs(meters)} Cubic meters more.");
+                    break;
+                }
+                
+               
+            }
+            if (meters > 0)
+            {
+                Console.WriteLine($"{Math.Abs(meters)} Cubic meters left.");
+            }
+        }
+    }
+}

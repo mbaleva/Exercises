@@ -1,0 +1,48 @@
+using System;
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int fails = int.Parse(Console.ReadLine());
+
+            int countFails = 0;
+            int countExercise = 0;
+            double totalGrades = 0.00;
+            string lastExercise = string.Empty;
+
+            bool isHeFailed = true;
+
+            while (countFails < fails)
+            {
+                string exercise = Console.ReadLine();
+
+                if (exercise == "Enough")
+                {
+                    isHeFailed = false;
+                    break;
+                }
+                double grade = double.Parse(Console.ReadLine());
+                if (grade <= 4)
+                {
+                    countFails++;
+                }
+                totalGrades += grade;
+                countExercise++;
+                lastExercise = exercise;
+            }
+            if (isHeFailed)
+            {
+                Console.WriteLine($"You need a break, {countFails} poor grades.");
+            }
+            else
+            {
+                Console.WriteLine($"Average score: {totalGrades/countExercise:F2}");
+                Console.WriteLine($"Number of problems: {countExercise}");
+                Console.WriteLine($"Last problem: {lastExercise}");
+            }
+        }
+    }
+}

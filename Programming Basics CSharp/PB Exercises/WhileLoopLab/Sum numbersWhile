@@ -1,0 +1,26 @@
+using System;
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+
+            double sum = 0.00;
+
+            while (true)
+            {
+                int currentNumber = int.Parse(Console.ReadLine());
+                sum += currentNumber;
+
+                if (sum >= number)
+                {
+                    Console.WriteLine(sum);
+                    break;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+using System;
+
+
+namespace NestedLoopsLab
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int people = int.Parse(Console.ReadLine());
+
+            double totalAverageSuccess = 0.00;
+            int counter = 0;
+          
+            while (true)
+            {
+                string presentationName = Console.ReadLine();
+
+                if (presentationName == "Finish")
+                {
+                    break;
+                }
+                double averageSuccess = 0.00;
+                counter++;
+                for (int i = 0; i < people; i++)
+                {
+                    double grades = double.Parse(Console.ReadLine());
+                    averageSuccess += grades;
+
+                }
+                averageSuccess /= people;
+                totalAverageSuccess += averageSuccess;
+                Console.WriteLine($"{presentationName} - {averageSuccess:F2}.");
+            }
+            totalAverageSuccess = totalAverageSuccess/counter;
+            Console.WriteLine($"Student's final assessment is {totalAverageSuccess:F2}.");
+        }
+    }
+}

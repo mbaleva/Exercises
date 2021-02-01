@@ -1,0 +1,44 @@
+using System;
+using System.Security.Cryptography;
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int age = int.Parse(Console.ReadLine());
+            double washingMachine = double.Parse(Console.ReadLine());
+            double toyPrice = double.Parse(Console.ReadLine());
+
+            int toysCounter = 0;
+            double savedMoney = 0.00;
+
+            for (int i = 1; i <= age; i++)
+            {
+                if (i % 2==0)
+                {
+                    savedMoney += i * 5;
+                    savedMoney--;
+                }
+                else
+                {
+                    toysCounter++;
+                }
+            }
+            savedMoney += toysCounter * toyPrice;
+            double residual = savedMoney - washingMachine;
+            double neededMoney = washingMachine - savedMoney;
+
+            if (savedMoney >= washingMachine)
+            {
+                Console.WriteLine($"Yes! {residual:F2}");
+            }
+            else
+            {
+                Console.WriteLine($"No! {neededMoney:F2}");
+
+            }
+        }
+    }
+}   

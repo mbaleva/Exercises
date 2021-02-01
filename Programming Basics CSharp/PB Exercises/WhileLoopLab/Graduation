@@ -1,0 +1,45 @@
+using System;
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = Console.ReadLine();
+
+            double averageSuccess = 0.00;
+            int failsCounter = 0;
+            int grade = 1;
+
+            while (true)
+            {
+                double success = double.Parse(Console.ReadLine());
+
+                if (success >= 4)
+                {
+                    averageSuccess += success;
+                    grade++;
+                }
+                else if (success < 4)
+                {
+                    failsCounter++;
+                }
+                if (failsCounter == 2)
+                {
+                    Console.WriteLine($"{name} has been excluded at {grade} grade");
+                    break;
+                }
+                if (grade == 13)
+                {
+                    break;
+                }
+            }
+            double averageSuccess1 = averageSuccess / 12;
+            if (grade == 13)
+            {
+                Console.WriteLine($"{name} graduated. Average grade: {averageSuccess1:F2}");
+            }
+        }
+    }
+}

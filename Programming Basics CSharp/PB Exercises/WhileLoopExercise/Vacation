@@ -1,0 +1,52 @@
+using System;
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double neededMoneyForTrip = double.Parse(Console.ReadLine());
+            double savedMoney = double.Parse(Console.ReadLine());
+
+            int daysCounter = 0;
+            int spendingCounter = 0;
+
+            while (true)
+            {
+                string action = Console.ReadLine();
+                double money = double.Parse(Console.ReadLine());
+                daysCounter++;
+                if (action == "spend")
+                {
+                    spendingCounter++;
+                    savedMoney -= money;
+                    if (savedMoney<0)
+                    {
+                        savedMoney = 0;
+                    }
+                    if (spendingCounter == 5)
+                    {
+                        Console.WriteLine($"You can't save the money.");
+                        Console.WriteLine($"{daysCounter}");
+                        break;
+                    }
+                    
+                }
+                else if (action == "save")
+                {
+                    savedMoney += money;
+                    spendingCounter = 0;
+                }
+                if (savedMoney>=neededMoneyForTrip)
+                {
+                    Console.WriteLine($"You saved the money for {daysCounter} days.");
+                    break;
+                }
+                
+            }
+            
+
+        }
+    }
+}

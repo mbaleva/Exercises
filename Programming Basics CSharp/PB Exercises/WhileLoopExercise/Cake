@@ -1,0 +1,41 @@
+using System;
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int length = int.Parse(Console.ReadLine());
+            int width = int.Parse(Console.ReadLine());
+            
+
+            int totalCake = length * width;
+
+            while (true)
+            {
+                string command = Console.ReadLine();
+
+                if (command == "STOP")
+                {
+                    break;
+                }
+                int cake = int.Parse(command);
+                totalCake -= cake;
+
+
+                if (totalCake < 0)
+                {
+                    Console.WriteLine($"No more cake left! You need {Math.Abs(totalCake)} pieces more.");
+                    break;
+                }
+
+
+            }
+            if (totalCake > 0)
+            {
+                Console.WriteLine($"{Math.Abs(totalCake)} pieces are left.");
+            }
+        }
+    }
+}

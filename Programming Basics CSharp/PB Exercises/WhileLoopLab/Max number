@@ -1,0 +1,31 @@
+using System;
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int maxNumber = int.MinValue;
+
+
+
+            while (true)
+            {
+                string stop = Console.ReadLine();
+
+                if (stop == "Stop")
+                {
+                    break;
+                }
+                int number = int.Parse(stop);
+
+                if (number > maxNumber)
+                {
+                    maxNumber = number;
+                }
+            }
+            Console.WriteLine(maxNumber);
+        }
+    }
+}

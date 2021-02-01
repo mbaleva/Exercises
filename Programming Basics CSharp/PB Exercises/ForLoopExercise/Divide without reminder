@@ -1,0 +1,45 @@
+using System;
+
+namespace brum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double n = double.Parse(Console.ReadLine());
+
+            double count = 0;
+            double count1 = 0;
+            double count2 = 0;
+            
+
+            for (int i = 0; i <n ; i++)
+            {
+                double currentNumber = double.Parse(Console.ReadLine());
+
+                if (currentNumber % 2 == 0)
+                {
+                    count++;
+                }
+                if (currentNumber % 3 == 0)
+                {
+                    count1++;
+                }
+                if (currentNumber % 4 == 0)
+                {
+                    count2++;
+                }
+            }
+
+            double percentage1 = (count / n) * 100;
+            double percentage2 = (count1 / n) * 100;
+            double percentage3 = (count2 / n) * 100;
+
+            Console.WriteLine($"{percentage1:F2}%");
+            Console.WriteLine($"{percentage2:F2}%");
+            Console.WriteLine($"{percentage3:F2}%");
+            
+
+        }
+    }
+}
