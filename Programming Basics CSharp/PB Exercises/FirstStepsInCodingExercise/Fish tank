@@ -1,0 +1,21 @@
+using System;
+
+namespace Exercises
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double length = double.Parse(Console.ReadLine());
+            double width = double.Parse(Console.ReadLine());
+            double height = double.Parse(Console.ReadLine());
+            double percent = double.Parse(Console.ReadLine());
+            double volume = length * width * height;
+            double volume1 = volume * 0.001;
+            double percent1 = percent * 0.01;
+            double volume2 = volume1 * (1 - percent1);
+            Console.WriteLine(volume2);
+
+        }
+    }
+}

@@ -1,0 +1,32 @@
+using System;
+
+namespace FirstSteppInCodingExercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int days = int.Parse(Console.ReadLine());
+            int bakersCount = int.Parse(Console.ReadLine());
+            int cakesCount = int.Parse(Console.ReadLine());
+            int waffels = int.Parse(Console.ReadLine());
+            int pancakesCount = int.Parse(Console.ReadLine());
+            double cakesProfitForOneDay = cakesCount * 45;
+            double waffelsProfitForOneDay = waffels * 5.8;
+            double pancakesProfitForOneDay = pancakesCount * 3.2;
+            double totalProfitForOneDay = (cakesProfitForOneDay +
+                waffelsProfitForOneDay + pancakesProfitForOneDay) * bakersCount;
+            double totalProfitForTheCampaign = totalProfitForOneDay * days;
+            double expences = 1 / 8.0;
+            double result = totalProfitForTheCampaign - (totalProfitForTheCampaign * expences);
+
+            Console.WriteLine(result);
+
+
+
+            
+          
+
+        }
+    }
+}

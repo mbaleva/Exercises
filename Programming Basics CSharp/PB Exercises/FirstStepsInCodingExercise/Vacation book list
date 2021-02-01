@@ -1,0 +1,18 @@
+using System;
+
+namespace Exercises
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double pages = double.Parse(Console.ReadLine());
+            double pagesForOneHour = double.Parse(Console.ReadLine());
+            double Days = double.Parse(Console.ReadLine());
+            double TimeForBook = pages / pagesForOneHour;
+            double TimeForBookOneDay = TimeForBook / Days;
+            Console.WriteLine(TimeForBookOneDay);
+
+        }
+    }
+}

@@ -1,0 +1,31 @@
+using System;
+
+namespace Tarataici
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double strawberryPrice = double.Parse(Console.ReadLine());
+            double banana = double.Parse(Console.ReadLine());
+            double orange = double.Parse(Console.ReadLine());
+            double raspberries = double.Parse(Console.ReadLine());
+            double strawberry = double.Parse(Console.ReadLine());
+
+
+            double raspberriesPrice = strawberryPrice / 2;
+            double orangePrice = raspberriesPrice - (0.4 * raspberriesPrice);
+            double bananaPrice = raspberriesPrice - (0.8 * raspberriesPrice);
+
+
+            double raspberriesSum = raspberriesPrice * raspberries;
+            double orangeSum = orange * orangePrice;
+            double bananaSum = banana * bananaPrice;
+            double strawberrySum = strawberry * strawberryPrice;
+            double Sum = raspberriesSum + orangeSum + bananaSum + strawberrySum;
+            Console.WriteLine(Sum);
+
+
+        }
+    }
+}
