@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegularExpressionsExercise", "RegularExpressionsExercise\RegularExpressionsExercise.csproj", "{0D9E98A1-FE2C-4487-A5C4-D3BB66AE4D57}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.Furniture", "01.Furniture\01.Furniture.csproj", "{7759CAD5-0454-45E7-903F-6DC1B9FFEFA7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02.Race", "02.Race\02.Race.csproj", "{D0A3110D-D27A-4BF6-83C4-5E6C9F97845C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03.SoftUniBarIncome", "03.SoftUniBarIncome\03.SoftUniBarIncome.csproj", "{B55AD782-354E-4DD3-A41F-275256F87718}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.StarEnigma", "04.StarEnigma\04.StarEnigma.csproj", "{3CB8F570-993C-4A18-AE3B-E81D6979830F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.NetherRealms", "05.NetherRealms\05.NetherRealms.csproj", "{75F5E42A-992C-41B8-B1EE-444DFD2FCC72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.ExtractEmails", "06.ExtractEmails\06.ExtractEmails.csproj", "{07662EA1-7DFE-4FEC-8E91-E0B03F9D369B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D9E98A1-FE2C-4487-A5C4-D3BB66AE4D57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D9E98A1-FE2C-4487-A5C4-D3BB66AE4D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D9E98A1-FE2C-4487-A5C4-D3BB66AE4D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D9E98A1-FE2C-4487-A5C4-D3BB66AE4D57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7759CAD5-0454-45E7-903F-6DC1B9FFEFA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7759CAD5-0454-45E7-903F-6DC1B9FFEFA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7759CAD5-0454-45E7-903F-6DC1B9FFEFA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7759CAD5-0454-45E7-903F-6DC1B9FFEFA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0A3110D-D27A-4BF6-83C4-5E6C9F97845C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0A3110D-D27A-4BF6-83C4-5E6C9F97845C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0A3110D-D27A-4BF6-83C4-5E6C9F97845C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0A3110D-D27A-4BF6-83C4-5E6C9F97845C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B55AD782-354E-4DD3-A41F-275256F87718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B55AD782-354E-4DD3-A41F-275256F87718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B55AD782-354E-4DD3-A41F-275256F87718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B55AD782-354E-4DD3-A41F-275256F87718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CB8F570-993C-4A18-AE3B-E81D6979830F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CB8F570-993C-4A18-AE3B-E81D6979830F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CB8F570-993C-4A18-AE3B-E81D6979830F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CB8F570-993C-4A18-AE3B-E81D6979830F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75F5E42A-992C-41B8-B1EE-444DFD2FCC72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75F5E42A-992C-41B8-B1EE-444DFD2FCC72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75F5E42A-992C-41B8-B1EE-444DFD2FCC72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75F5E42A-992C-41B8-B1EE-444DFD2FCC72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07662EA1-7DFE-4FEC-8E91-E0B03F9D369B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07662EA1-7DFE-4FEC-8E91-E0B03F9D369B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07662EA1-7DFE-4FEC-8E91-E0B03F9D369B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07662EA1-7DFE-4FEC-8E91-E0B03F9D369B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F9AC774-46F6-4C1E-823C-D83CF22360A3}
+	EndGlobalSection
+EndGlobal
